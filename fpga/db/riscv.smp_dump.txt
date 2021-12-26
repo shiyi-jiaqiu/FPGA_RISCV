@@ -1,0 +1,48 @@
+
+State Machine - |riscv_demo|soc:soc_i|riscv_core:core_i|ex_mem_size_r
+Name ex_mem_size_r.SIZE_BYTE ex_mem_size_r.SIZE_WORD ex_mem_size_r.SIZE_HALF 
+ex_mem_size_r.SIZE_BYTE 0 0 0 
+ex_mem_size_r.SIZE_HALF 1 0 1 
+ex_mem_size_r.SIZE_WORD 1 1 0 
+
+State Machine - |riscv_demo|soc:soc_i|riscv_core:core_i|id_branch_r
+Name id_branch_r.BR_GEU id_branch_r.BR_LTU id_branch_r.BR_GE id_branch_r.BR_LT id_branch_r.BR_NE id_branch_r.BR_EQ id_branch_r.BR_JUMP id_branch_r.BR_NONE 
+id_branch_r.BR_NONE 0 0 0 0 0 0 0 0 
+id_branch_r.BR_JUMP 0 0 0 0 0 0 1 1 
+id_branch_r.BR_EQ 0 0 0 0 0 1 0 1 
+id_branch_r.BR_NE 0 0 0 0 1 0 0 1 
+id_branch_r.BR_LT 0 0 0 1 0 0 0 1 
+id_branch_r.BR_GE 0 0 1 0 0 0 0 1 
+id_branch_r.BR_LTU 0 1 0 0 0 0 0 1 
+id_branch_r.BR_GEU 1 0 0 0 0 0 0 1 
+
+State Machine - |riscv_demo|soc:soc_i|riscv_core:core_i|id_mem_size_r
+Name id_mem_size_r.SIZE_BYTE id_mem_size_r.SIZE_WORD id_mem_size_r.SIZE_HALF 
+id_mem_size_r.SIZE_BYTE 0 0 0 
+id_mem_size_r.SIZE_HALF 1 0 1 
+id_mem_size_r.SIZE_WORD 1 1 0 
+
+State Machine - |riscv_demo|soc:soc_i|riscv_core:core_i|id_alu_op_r
+Name id_alu_op_r.ALU_AUIPC id_alu_op_r.ALU_NPC id_alu_op_r.ALU_REM id_alu_op_r.ALU_DIV id_alu_op_r.ALU_MULH id_alu_op_r.ALU_MULL id_alu_op_r.ALU_SHR id_alu_op_r.ALU_SHL id_alu_op_r.ALU_SLTU id_alu_op_r.ALU_SLT id_alu_op_r.ALU_XOR id_alu_op_r.ALU_OR id_alu_op_r.ALU_AND id_alu_op_r.ALU_SUB id_alu_op_r.ALU_ADD 
+id_alu_op_r.ALU_ADD 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+id_alu_op_r.ALU_SUB 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+id_alu_op_r.ALU_AND 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+id_alu_op_r.ALU_OR 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+id_alu_op_r.ALU_XOR 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+id_alu_op_r.ALU_SLT 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+id_alu_op_r.ALU_SLTU 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+id_alu_op_r.ALU_SHL 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+id_alu_op_r.ALU_SHR 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+id_alu_op_r.ALU_MULL 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+id_alu_op_r.ALU_MULH 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+id_alu_op_r.ALU_DIV 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+id_alu_op_r.ALU_REM 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+id_alu_op_r.ALU_NPC 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+id_alu_op_r.ALU_AUIPC 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |riscv_demo|soc:soc_i|riscv_core:core_i|if_state_r
+Name if_state_r.ST_UNALIGNED if_state_r.ST_HIGH if_state_r.ST_LOW if_state_r.ST_RESET 
+if_state_r.ST_RESET 0 0 0 0 
+if_state_r.ST_LOW 0 0 1 1 
+if_state_r.ST_HIGH 0 1 0 1 
+if_state_r.ST_UNALIGNED 1 0 0 1 
